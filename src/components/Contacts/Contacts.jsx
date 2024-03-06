@@ -7,7 +7,7 @@ import css from './Contacts.module.css';
 const Contacts = () => { 
   const dispatch = useDispatch();
   const contacts = useSelector(selectVisibleContacts);
-  const handleDelete = contactId => {
+  const onDelete = contactId => {
     dispatch(deleteContacts(contactId));
   };
     <>
@@ -17,7 +17,7 @@ const Contacts = () => {
             <span>
                     {name}: {number}                    
             </span>
-            <button className={css.btn} onClick={() => handleDelete(id)}>Delete</button>
+            <button className={css.btn} onClick={() => onDelete(id)}>Delete</button>
           </li>
         ))}
       </ul>
