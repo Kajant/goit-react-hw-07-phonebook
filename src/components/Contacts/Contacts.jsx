@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteContacts } from '../../redux/contactsSlice';
 import { selectVisibleContacts } from '../../redux/Selectors';
 import css from './Contacts.module.css';
-
+import PropTypes from 'prop-types';
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -24,6 +24,8 @@ const Contacts = () => {
       </ul>
     </>)
 }
-
+Contacts.propTypes = {
+  contacts: PropTypes.array.isRequired,
+};
 
 export default Contacts;

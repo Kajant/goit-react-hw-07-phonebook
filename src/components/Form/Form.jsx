@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContacts } from '../../redux/contactsSlice';
 import css from './Form.module.css';
+import PropTypes from 'prop-types';
 
 function Form() {
   const [name, setName] = useState('');
@@ -76,5 +77,8 @@ function Form() {
     </form>
   );
 }
+Form.propTypes = {
+  onAddContact: PropTypes.func.isRequired,
+};
 
 export default Form;
