@@ -9,13 +9,13 @@ const Filter = () => {
   
     const filter = useSelector(selectFilter);
   
-    const handleFilterChange = e => {
+    const onFilterChange = e => {
       dispatch(setFilter(e.target.value));
     };
     return (
         <div className={css.filter}>
             <p className={css.info}>Find contacts by name</p>
-            <input className={css.input} type="text" name="filter" placeholder="name" value={filter} onChange={handleFilterChange} />
+            <input className={css.input} type="text" name="filter" placeholder="name" value={filter} onChange={onFilterChange} />
         </div>
     )
 }
