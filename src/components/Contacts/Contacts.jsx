@@ -4,12 +4,13 @@ import { selectVisibleContacts } from '../../redux/Selectors';
 import css from './Contacts.module.css';
 
 
-const Contacts = () => { 
+const Contacts = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectVisibleContacts);
   const onDelete = contactId => {
     dispatch(deleteContacts(contactId));
   };
+  return (
     <>
       <ul className={css.contactList}>
         {contacts.map(({ id, name, number }) => (
@@ -21,7 +22,7 @@ const Contacts = () => {
           </li>
         ))}
       </ul>
-    </>
+    </>)
 }
 
 
