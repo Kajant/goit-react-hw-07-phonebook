@@ -104,5 +104,4 @@ import {
         }),
   });
   export const { setFilter } = contactsSlice.actions;
-  
   export const contactsReducer = contactsSlice.reducer;
