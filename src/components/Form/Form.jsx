@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 function Form() {
   const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const [phone, setNumber] = useState('');
   const dispatch = useDispatch();
   const contacts = useSelector(state => state.contacts.contacts.items);
 
@@ -15,7 +15,7 @@ function Form() {
       case 'name':
         setName(event.target.value);
         break;
-      case 'number':
+      case 'phone':
         setNumber(event.target.value);
         break;
       default:
@@ -32,7 +32,7 @@ function Form() {
     event.preventDefault();
     const newContact = {
       name,
-      number,
+      phone,
     };
     const newName = contacts.find(
       el => el.name.toLowerCase() === name.toLowerCase()
@@ -63,10 +63,10 @@ function Form() {
       <label className={css.label}>Number
         <input
           className={css.input}
-          value={number}
+          value={phone}
           onChange={onInputChange}
           type="tel"
-          name="number"
+          name="phone"
           placeholder="123-45-67"
           pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
           required />
