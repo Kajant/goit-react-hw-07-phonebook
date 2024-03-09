@@ -19,7 +19,7 @@ function Form() {
         setNumber(event.target.value);
         break;
       default:
-        console.log("There isn't such case");
+        console.log("Error");
     }
   };
 
